@@ -179,6 +179,8 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
         relicTrackables.activate();
 
+        String x = "";
+
 
 
         while (opModeIsActive()) {
@@ -208,6 +210,8 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
                  * loop until this condition occurs, then move on to act accordingly depending
 
                  * on which VuMark was visible. */
+
+                x = vuMark.toString();
 
                 telemetry.addData("VuMark", "%s visible", vuMark);
 
@@ -268,6 +272,14 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
 
             telemetry.update();
+
+        }
+
+        if (x == "LEFT") {
+
+        } else if (x == "RIGHT"){
+
+        } else if (x == "CENTER"){
 
         }
 
