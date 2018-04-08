@@ -67,42 +67,42 @@ public class Bot {
 
         //ld.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    }
 
-        public void encoderDrive(double speed, double leftInches, double rightInches, double timeoutSeconds) {
-            int newLeftTarget, newRightTarget;
+    public void encoderDrive(double speed, double leftInches, double rightInches, double timeoutSeconds) {
+        int newLeftTarget, newRightTarget;
 
-            if(opModeIsActive()) {
-                // finding target   position
-                newLeftTarget = ld.getCurrentPosition() + (int)(leftInches * COUNTS_PER_INCH);
-                newRightTarget = rd.getCurrentPosition() + (int)(rightInches * COUNTS_PER_INCH);
+        if(true) {
+            // finding target   position
+            newLeftTarget = ld.getCurrentPosition() + (int)(leftInches * COUNTS_PER_INCH);
+            newRightTarget = rd.getCurrentPosition() + (int)(rightInches * COUNTS_PER_INCH);
 
-                // setting target encoder position
-                ld.setTargetPosition(newLeftTarget);
-                rd.setTargetPosition(newRightTarget);
+            // setting target encoder position
+            ld.setTargetPosition(newLeftTarget);
+            rd.setTargetPosition(newRightTarget);
 
-                // move to position
+            // move to position
 
-                ld.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                rd.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            ld.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            rd.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-                // resetting timer and setting speed
-                runtime.reset();
-                ld.setPower(Math.abs(speed));
-                rd.setPower(Math.abs(speed));
+            // resetting timer and setting speed
+            runtime.reset();
+            ld.setPower(Math.abs(speed));
+            rd.setPower(Math.abs(speed));
 
 
-                while(opModeIsActive() && (runtime.seconds() < timeoutSeconds) &&
-                        ld.isBusy() && rd.isBusy())) {
-                }
-
-                // stopping motion
-                ld.setPower(0);
-                rd.setPower(0);
-
-                // turn off RUN_TO_POSITION mode
-                ld.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-                rd.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            while((runtime.seconds() < timeoutSeconds) &&
+                    ld.isBusy() && rd.isBusy()) {
             }
+
+            // stopping motion
+            ld.setPower(0);
+            rd.setPower(0);
+
+            // turn off RUN_TO_POSITION mode
+            ld.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            rd.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         }
     }
 }
