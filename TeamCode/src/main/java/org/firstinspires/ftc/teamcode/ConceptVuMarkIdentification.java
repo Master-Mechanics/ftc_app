@@ -213,9 +213,11 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
                  * on which VuMark was visible. */
 
-                x = vuMark.toString();
 
                 telemetry.addData("VuMark", "%s visible", vuMark);
+
+                x = vuMark.toString();
+                telemetry.addData("X = ", "%s visible", x);
 
 
 
@@ -281,7 +283,6 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
             bot.encoderDrive(bot.DRIVE_SPEED, 0, -12, 200);
         } else if (x == "RIGHT"){
             bot.encoderDrive(bot.DRIVE_SPEED, -12, 0, 200);
-
         } else if (x == "CENTER"){
             bot.encoderDrive(bot.DRIVE_SPEED, -12, -12, 200);
         }

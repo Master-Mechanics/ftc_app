@@ -14,9 +14,12 @@ public class Auto extends LinearOpMode {
 
     private Bot bot = new Bot();
 
+    ConceptVuMarkIdentification Vumark = new ConceptVuMarkIdentification();
+
     @Override
     public void runOpMode() {
         bot.init(hardwareMap);
+        Vumark.runOpMode();
 
         waitForStart();
 
