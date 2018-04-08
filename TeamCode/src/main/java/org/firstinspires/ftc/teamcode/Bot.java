@@ -62,8 +62,8 @@ public class Bot {
         //pivot2Position = pivot2.getPosition();
         //jewelPosition = jewel.getPosition();
 
-        ld.setDirection(DcMotorSimple.Direction.REVERSE);
-        rd.setDirection(DcMotorSimple.Direction.FORWARD);
+        ld.setDirection(DcMotorSimple.Direction.FORWARD);
+        rd.setDirection(DcMotorSimple.Direction.REVERSE);
 
         //ld.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
