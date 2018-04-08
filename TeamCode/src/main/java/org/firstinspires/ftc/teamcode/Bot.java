@@ -19,7 +19,7 @@ public class Bot {
     public Servo armTop = null;
     public Servo jewel  = null;
 
-    public ColorSensor colorSensor = null;
+    //public ColorSensor colorSensor = null;
 
     public double pivotPosition = 0d;
     public double jewelPosition = 0d;
@@ -32,8 +32,8 @@ public class Bot {
     public void init(HardwareMap ahwMap) {
         hardwareMap = ahwMap;
 
-        //ld = hardwareMap.get(DcMotor.class, "left_drive");
-        //rd = hardwareMap.get(DcMotor.class, "right_drive");
+        ld = hardwareMap.get(DcMotor.class, "left_drive");
+        rd = hardwareMap.get(DcMotor.class, "right_drive");
         //arm = hardwareMap.get(DcMotor.class, "front_arm");
         //arm2 = hardwareMap.get(DcMotor.class, "back_arm");
 
@@ -43,14 +43,14 @@ public class Bot {
         //armTop = hardwareMap.get(Servo.class, "arm_top");
         //jewel = hardwareMap.get(Servo.class, "jewel_servo");
 
-        colorSensor = hardwareMap.get(ColorSensor.class, "color");
+        //colorSensor = hardwareMap.get(ColorSensor.class, "color");
 
         //pivotPosition = pivot.getPosition();
         //pivot2Position = pivot2.getPosition();
         //jewelPosition = jewel.getPosition();
 
-        //ld.setDirection(DcMotorSimple.Direction.REVERSE);
-        //rd.setDirection(DcMotorSimple.Direction.FORWARD);
+        ld.setDirection(DcMotorSimple.Direction.REVERSE);
+        rd.setDirection(DcMotorSimple.Direction.FORWARD);
 
         //ld.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

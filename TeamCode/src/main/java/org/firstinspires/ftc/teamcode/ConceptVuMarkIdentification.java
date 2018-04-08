@@ -105,15 +105,9 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
 
     @Override public void runOpMode() {
-
-
-
         /*
-
          * To start up Vuforia, tell it the view that we wish to use for camera monitor (on the RC phone);
-
          * If no camera monitor is desired, use the parameterless constructor instead (commented out below).
-
          */
 
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
@@ -123,33 +117,20 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
 
         // OR...  Do Not Activate the Camera Monitor View, to save power
-
         // VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters();
 
 
 
         /*
-
          * IMPORTANT: You need to obtain your own license key to use Vuforia. The string below with which
-
          * 'parameters.vuforiaLicenseKey' is initialized is for illustration only, and will not function.
-
          * A Vuforia 'Development' license key, can be obtained free of charge from the Vuforia developer
-
          * web site at https://developer.vuforia.com/license-manager.
-
-         *
-
          * Vuforia license keys are always 380 characters long, and look as if they contain mostly
-
          * random data. As an example, here is a example of a fragment of a valid key:
-
          *      ... yIgIzTqZ4mWjk9wd3cZO9T1axEqzuhxoGlfOOI2dRzKS4T0hQ8kT ...
-
          * Once you've obtained a license key, copy the string from the Vuforia web site
-
          * and paste it in to your code onthe next line, between the double quotes.
-
          */
 
         parameters.vuforiaLicenseKey = "AZdKRPL/////AAAAGdWHky5ZjET7mNUJ+qxkIDtvddP9PIXKwsMwBNDXV0SrsOuioPqAv1q7EB2k1QqsJd3eIb8WIXmHt4fxm153DMq6AEpg0L8nuqQuMmzxL9nFfM2ubV6PVSoZcdQqPOwtLpJqk4KUjKc8v0Es0M0aZl7R8a+jyzDiobaKVE9+4EY1dKuRPTB1OYCqCKfn1OkULrWxH6zSzwyf6ztPp6cKFn+oaglcxzX9iOhejsX4CsoAg4X/6HLnWWrux1Z4hfVP2EKanjrXqeSm5iursV0Lu+HRKMvo9VbIzGnit7JDusQsI7JVEpVsRnR39GaTJT1W1jijOVaw7VVkCt/7D9U+z5JcjgzOoug+Mye9H6n020MW";
@@ -157,13 +138,9 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
 
         /*
-
          * We also indicate which camera on the RC that we wish to use.
-
          * Here we chose the back (HiRes) camera (for greater range), but
-
          * for a competition robot, the front camera might be more convenient.
-
          */
 
         parameters.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
@@ -184,7 +161,7 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
          */
 
-        VuforiaTrackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
+        VuforiaT grackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
 
         VuforiaTrackable relicTemplate = relicTrackables.get(0);
 

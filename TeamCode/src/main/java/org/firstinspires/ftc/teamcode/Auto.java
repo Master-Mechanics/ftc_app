@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.hardware.ColorSensor;
+//import com.qualcomm.robotcore.hardware.ColorSensor;
 
 //👉😎👉
 @Autonomous(name="test")
@@ -31,9 +31,9 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
-        encoderDrive(DRIVE_SPEED, 12, 12, 200);
+        encoderDrive(DRIVE_SPEED, -12, -12, 200);
 
-        encoderDrive(DRIVE_SPEED * -1, 12, 12, 200);
+        encoderDrive(DRIVE_SPEED, 12, 12, 200);
     }
 
     public void encoderDrive(double speed, double leftInches, double rightInches, double timeoutSeconds) {
