@@ -25,25 +25,16 @@ public class TeleOpWithArm extends OpMode{
     public void loop() {
 
         //--- nuclear launch protocol ---//
-        if (!pushed) {
+       /* if (!pushed) {
             if (gamepad1.y && gamepad2.y) {
                 //bot.unfold();
                 pushed = !pushed;
             }
-        }
+        }*/
 
         double drive2 = -gamepad1.right_stick_y / 2;//, turn = gamepad1.right_stick_x;
         double drive = -gamepad1.left_stick_y / 2;
         double straight = gamepad1.right_trigger / 2, back = gamepad1.left_trigger / 2;
-
-        /*if(gamepad1.left_trigger > 0)
-        {
-            bot.jewel.setPosition(bot.jewelPosition - 0.05);
-        }
-        else if(gamepad1.right_trigger > 0)
-        {
-            bot.jewel.setPosition(bot.jewelPosition + 0.05);
-        }*/
 
         // whole arm motor
         double armMovement = gamepad2.left_stick_y/3.5;
@@ -94,39 +85,6 @@ public class TeleOpWithArm extends OpMode{
             bot.arm2.setPower(rightTrigger / 3);
         }
 
-        /*if(straight > 0)
-        {
-            bot.ld.setPower(straight);
-            bot.rd.setPower(straight);
-            telemetry.addData("driving straight: ", "true");
-        }
-        else if(back > 0)
-        {
-            bot.ld.setPower(back * -1);
-            bot.rd.setPower(back * -1);
-            telemetry.addData("driving backwards: ", "true");
-        }
-        else
-        {
-            if(turn > 0)
-            {
-                bot.ld.setPower(Range.clip(-turn, -1d, 1d));
-                bot.rd.setPower(Range.clip(turn, -1d, 1d));
-            }
-            else if(turn < 0)
-            {
-                bot.ld.setPower(Range.clip(turn, -1d, 1d));
-                bot.rd.setPower(Range.clip(-turn, -1d, 1d));
-            }
-            else
-            {
-                bot.ld.setPower(Range.clip(drive, -1d, 1d));
-                bot.rd.setPower(Range.clip(drive, -1d, 1d));
-            }
-
-            telemetry.addData("left drive power: ", bot.ld.getPowerFloat());
-            telemetry.addData("right drive power: ", bot.rd.getPowerFloat());
-        }*/
         if(straight > 0)
         {
             bot.ld.setPower(straight);
