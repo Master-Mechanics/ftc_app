@@ -103,6 +103,7 @@ public class Bot {
             // turn off RUN_TO_POSITION mode
             ld.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             rd.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
         }
     }
 }

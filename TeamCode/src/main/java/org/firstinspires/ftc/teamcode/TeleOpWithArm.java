@@ -48,35 +48,35 @@ public class TeleOpWithArm extends OpMode{
         // whole arm motor
         double armMovement = gamepad2.left_stick_y/3.5;
         if(!armLock) {
-            bot.arm.setPower(armMovement);
+            //bot.arm.setPower(armMovement);
         }
 
         // arm pivot server
         double pivot = gamepad2.right_stick_y;
-        bot.pivotPosition = bot.pivot.getPosition();
-        bot.pivot.setPosition(bot.pivotPosition + (pivot / 200));
+        //bot.pivotPosition = bot.pivot.getPosition();
+        //bot.pivot.setPosition(bot.pivotPosition + (pivot / 200));
 
         // open arm                close arm
         boolean open = gamepad2.a, close = gamepad2.x;
         if(close)
         {
-            bot.clamp.setPosition(0);
+            //bot.clamp.setPosition(0);
         }
         else if(open)
         {
-            bot.clamp.setPosition(.5);
+            //bot.clamp.setPosition(.5);
         }
 
         boolean open2 = gamepad2.y, close2 = gamepad2.b;
         if(close2)
         {
-            bot.pivot2Position = bot.pivot2.getPosition();
-            bot.pivot2.setPosition(bot.pivot2Position-.001);
+            //bot.pivot2Position = bot.pivot2.getPosition();
+            //bot.pivot2.setPosition(bot.pivot2Position-.001);
         }
         else if(open2)
         {
-            bot.pivot2Position = bot.pivot2.getPosition();
-            bot.pivot2.setPosition(bot.pivot2Position+.001);
+            //bot.pivot2Position = bot.pivot2.getPosition();
+            //bot.pivot2.setPosition(bot.pivot2Position+.001);
         }
 
         // left  trigger = drop
@@ -87,11 +87,11 @@ public class TeleOpWithArm extends OpMode{
 
         if(leftTrigger > rightTrigger)
         {
-            bot.arm2.setPower(leftTrigger / 3 * -1);
+            //bot.arm2.setPower(leftTrigger / 3 * -1);
         }
         else
         {
-            bot.arm2.setPower(rightTrigger / 3);
+            //bot.arm2.setPower(rightTrigger / 3);
         }
 
         /*if(straight > 0)
@@ -153,11 +153,11 @@ public class TeleOpWithArm extends OpMode{
 
         if(gamepad1.y)
         {
-            bot.jewel.setPosition(.8);
+            //bot.jewel.setPosition(.8);
         }
         else if(gamepad1.b)
         {
-            bot.jewel.setPosition(.25);
+            //bot.jewel.setPosition(.25);
         }
     }
 }
