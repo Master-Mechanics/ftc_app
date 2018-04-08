@@ -161,7 +161,7 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
          */
 
-        VuforiaT grackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
+        VuforiaTrackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
 
         VuforiaTrackable relicTemplate = relicTrackables.get(0);
 
