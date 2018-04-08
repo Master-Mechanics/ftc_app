@@ -231,6 +231,14 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
                 telemetry.addData("Pose", format(pose));
 
+                if (x == "LEFT") {
+                    bot.encoderDrive(bot.DRIVE_SPEED, 0, -12, 200);
+                } else if (x == "RIGHT"){
+                    bot.encoderDrive(bot.DRIVE_SPEED, -12, 0, 200);
+                } else if (x == "CENTER"){
+                    bot.encoderDrive(bot.DRIVE_SPEED, -12, -12, 200);
+                }
+
 
 
                 /* We further illustrate how to decompose the pose into useful rotational and
@@ -279,13 +287,6 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
         }
 
-        if (x == "LEFT") {
-            bot.encoderDrive(bot.DRIVE_SPEED, 0, -12, 200);
-        } else if (x == "RIGHT"){
-            bot.encoderDrive(bot.DRIVE_SPEED, -12, 0, 200);
-        } else if (x == "CENTER"){
-            bot.encoderDrive(bot.DRIVE_SPEED, -12, -12, 200);
-        }
 
     }
 
