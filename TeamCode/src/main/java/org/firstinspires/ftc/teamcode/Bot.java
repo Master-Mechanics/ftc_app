@@ -12,10 +12,10 @@ public class Bot {
 
     public DcMotor ld  = null;
     public DcMotor rd  = null;
-    public DcMotor arm = null;
+    public DcMotor lift = null;
     public DcMotor arm2 = null;
 
-    public Servo pivot2 = null;
+    public Servo clawRight = null;
     public Servo pivot = null;
     public Servo clamp = null;
     public Servo armTop = null;
@@ -47,11 +47,11 @@ public class Bot {
 
         ld = hardwareMap.get(DcMotor.class, "left_drive");
         rd = hardwareMap.get(DcMotor.class, "right_drive");
-        //arm = hardwareMap.get(DcMotor.class, "front_arm");
+        lift = hardwareMap.get(DcMotor.class, "lift");
         //arm2 = hardwareMap.get(DcMotor.class, "back_arm");
 
         //pivot = hardwareMap.get(Servo.class, "pivot");
-        //pivot2 = hardwareMap.get(Servo.class, "back_pivot");
+        clawRight = hardwareMap.get(Servo.class, "claw_right");
         //clamp = hardwareMap.get(Servo.class,  "clamp");
         //armTop = hardwareMap.get(Servo.class, "arm_top");
         //jewel = hardwareMap.get(Servo.class, "jewel_servo");
