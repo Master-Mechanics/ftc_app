@@ -37,21 +37,24 @@ public class TeleOpWithArm extends OpMode{
         double straight = gamepad1.right_trigger / 2, back = gamepad1.left_trigger / 2;
 
         // whole arm motor
-        double liftMovement = gamepad2.left_stick_y/3.5;
+        double liftMovement = gamepad2.right_stick_y/3.5;
         if(!armLock) {
             bot.lift.setPower(liftMovement);
         }
 
         if(gamepad2.a) {
-            bot.clawRight.setPosition(0);
+            bot.claw_right.setPosition(0);
+            bot.claw_left.setPosition(0);
         }
 
         if(gamepad2.x) {
-            bot.clawRight.setPosition(180);
+            bot.claw_right.setPosition(180);
+            bot.claw_left.setPosition(180);
         }
 
         if(gamepad2.y) {
-            bot.clawRight.setPosition(150);
+            bot.claw_right.setPosition(90);
+            bot.claw_left.setPosition(90);
         }
 
 
@@ -122,13 +125,10 @@ public class TeleOpWithArm extends OpMode{
 
 
 
-        if(gamepad1.y)
-        {
-            //bot.jewel.setPosition(.8);
-        }
-        else if(gamepad1.b)
-        {
+        //if(gamepad1.y){
+            //bot.jewel.setPosition(.8);}
+       // else if(gamepad1.b){
             //bot.jewel.setPosition(.25);
-        }
+        //}
     }
 }

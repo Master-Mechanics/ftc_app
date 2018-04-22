@@ -15,8 +15,8 @@ public class Bot {
     public DcMotor lift = null;
     public DcMotor arm2 = null;
 
-    public Servo clawRight = null;
-    public Servo pivot = null;
+    public Servo claw_right = null;
+    public Servo claw_left = null;
     public Servo clamp = null;
     public Servo armTop = null;
     public Servo jewel  = null;
@@ -50,8 +50,8 @@ public class Bot {
         lift = hardwareMap.get(DcMotor.class, "lift");
         //arm2 = hardwareMap.get(DcMotor.class, "back_arm");
 
-        //pivot = hardwareMap.get(Servo.class, "pivot");
-        clawRight = hardwareMap.get(Servo.class, "claw_right");
+        claw_left = hardwareMap.get(Servo.class, "claw_left");
+        claw_right = hardwareMap.get(Servo.class, "claw_right");
         //clamp = hardwareMap.get(Servo.class,  "clamp");
         //armTop = hardwareMap.get(Servo.class, "arm_top");
         //jewel = hardwareMap.get(Servo.class, "jewel_servo");
