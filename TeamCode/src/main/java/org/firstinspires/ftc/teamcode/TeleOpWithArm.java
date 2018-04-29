@@ -43,13 +43,13 @@ public class TeleOpWithArm extends OpMode{
         }
 
         if(gamepad2.a) {
-            bot.claw_right.setPosition(50);
-            bot.claw_left.setPosition(20);
+            bot.claw_right.setPosition(20);
+            bot.claw_left.setPosition(0);
         }
 
         if(gamepad2.b) {
             bot.claw_right.setPosition(90);
-            bot.claw_left.setPosition(0);
+            bot.claw_left.setPosition(90);
         }
 
 
