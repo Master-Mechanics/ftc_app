@@ -65,6 +65,9 @@ public class Bot {
         ld.setDirection(DcMotorSimple.Direction.FORWARD);
         rd.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        claw_left.setDirection(Servo.Direction.FORWARD);
+        claw_right.setDirection(Servo.Direction.REVERSE);
+
         //ld.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
