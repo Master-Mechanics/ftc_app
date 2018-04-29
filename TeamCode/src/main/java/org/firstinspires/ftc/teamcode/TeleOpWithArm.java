@@ -32,29 +32,24 @@ public class TeleOpWithArm extends OpMode{
             }
         }*/
 
-        double drive2 = -gamepad1.right_stick_y / 2;//, turn = gamepad1.right_stick_x;
-        double drive = -gamepad1.left_stick_y / 2;
+        double drive2 = gamepad1.right_stick_y / 2*-1;//, turn = gamepad1.right_stick_x;
+        double drive = gamepad1.left_stick_y / 2*-1;
         double straight = gamepad1.right_trigger / 2, back = gamepad1.left_trigger / 2;
 
         // whole arm motor
-        double liftMovement = gamepad2.right_stick_y/3.5;
+        double liftMovement = gamepad2.right_stick_y/3.5*-1;
         if(!armLock) {
             bot.lift.setPower(liftMovement);
         }
 
         if(gamepad2.a) {
-            bot.claw_right.setPosition(0);
-            bot.claw_left.setPosition(0);
+            bot.claw_right.setPosition(50);
+            bot.claw_left.setPosition(20);
         }
 
-        if(gamepad2.x) {
-            bot.claw_right.setPosition(180);
-            bot.claw_left.setPosition(180);
-        }
-
-        if(gamepad2.y) {
+        if(gamepad2.b) {
             bot.claw_right.setPosition(90);
-            bot.claw_left.setPosition(90);
+            bot.claw_left.setPosition(0);
         }
 
 
