@@ -24,13 +24,6 @@ public class TeleOpWithArm extends OpMode{
 
     public void loop() {
 
-        //--- nuclear launch protocol ---//
-       /* if (!pushed) {
-            if (gamepad1.y && gamepad2.y) {
-                //bot.unfold();
-                pushed = !pushed;
-            }
-        }*/
 
         double drive2 = gamepad1.right_stick_y / 2*-1;//, turn = gamepad1.right_stick_x;
         double drive = gamepad1.left_stick_y / 2*-1;
@@ -40,13 +33,16 @@ public class TeleOpWithArm extends OpMode{
         double liftMovement = gamepad2.right_stick_y/3.5*-1;
         if(!armLock) {
             bot.lift.setPower(liftMovement);
+            telemetry.addData("lift position: ", bot.lift.getCurrentPosition());
         }
 
+        // using magic numbers
         if(gamepad2.a) {
             bot.claw_right.setPosition(20);
             bot.claw_left.setPosition(0);
         }
 
+        // more magic numbers
         if(gamepad2.b) {
             bot.claw_right.setPosition(90);
             bot.claw_left.setPosition(90);
