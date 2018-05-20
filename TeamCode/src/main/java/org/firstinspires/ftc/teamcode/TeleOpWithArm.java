@@ -34,13 +34,16 @@ public class TeleOpWithArm extends OpMode{
         if(liftMovement > 0 && armLock)
             liftMovement = 0;
 
-        bot.lift.setPower(liftMovement);
+        /*bot.lift.setPower(liftMovement);
         if (bot.lift.getCurrentPosition() >= 4500){
             armLock = true;
         }
         else
             armLock = false;
-
+        */
+        telemetry.addData("lift position: ", bot.lift.getCurrentPosition());
+        telemetry.addData("lift movement: ", liftMovement);
+        telemetry.addData("arm lock: ", armLock);
 
         // using magic numbers
         if(gamepad2.a) {
