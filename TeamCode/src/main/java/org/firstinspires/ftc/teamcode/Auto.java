@@ -23,6 +23,9 @@ public class Auto extends LinearOpMode {
 
         waitForStart();
 
+        bot.jewel.setTargetPosition(-1);
+
+
         bot.encoderDrive(bot.DRIVE_SPEED, -12, -12, 200);
 
         bot.encoderDrive(bot.DRIVE_SPEED, 12, 12, 200);

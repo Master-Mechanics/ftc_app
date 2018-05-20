@@ -19,7 +19,7 @@ public class Bot {
     public Servo claw_left = null;
     public Servo clamp = null;
     public Servo armTop = null;
-    public Servo jewel  = null;
+    public DcMotor jewel  = null;
 
     //public ColorSensor colorSensor = null;
 
@@ -48,6 +48,7 @@ public class Bot {
         ld = hardwareMap.get(DcMotor.class, "left_drive");
         rd = hardwareMap.get(DcMotor.class, "right_drive");
         lift = hardwareMap.get(DcMotor.class, "lift");
+        jewel = hardwareMap.get(DcMotor.class, "jewel");
         //arm2 = hardwareMap.get(DcMotor.class, "back_arm");
 
         claw_left = hardwareMap.get(Servo.class, "claw_left");
