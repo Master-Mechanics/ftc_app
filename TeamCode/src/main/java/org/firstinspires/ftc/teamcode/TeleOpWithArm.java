@@ -31,21 +31,27 @@ public class TeleOpWithArm extends OpMode{
 
         // whole arm motor
         double liftMovement = gamepad2.right_stick_y/3.5*-1;
-        if(!armLock) {
-            bot.lift.setPower(liftMovement);
-            telemetry.addData("lift position: ", bot.lift.getCurrentPosition());
+        if(liftMovement > 0 && armLock)
+            liftMovement = 0;
+
+        bot.lift.setPower(liftMovement);
+        if (bot.lift.getCurrentPosition() >= 4500){
+            armLock = true;
         }
+        else
+            armLock = false;
+
 
         // using magic numbers
         if(gamepad2.a) {
-            bot.claw_right.setPosition(10);
-            bot.claw_left.setPosition(0);
+            bot.claw_right.setPosition(1);
+            bot.claw_left.setPosition(1);
         }
 
         // more magic numbers
         if(gamepad2.b) {
-            bot.claw_right.setPosition(90);
-            bot.claw_left.setPosition(90);
+            bot.claw_right.setPosition(-13);
+            bot.claw_left.setPosition(-10);
         }
 
 
@@ -110,8 +116,8 @@ public class TeleOpWithArm extends OpMode{
             //bot.rd.setPower(Range.clip(drive - turn, -1d, 1d));
             //telemetry.addData("left drive power: ", bot.ld.getPowerFloat());
             //telemetry.addData("right drive power: ", bot.rd.getPowerFloat());
-            bot.ld.setPower(drive);
-            bot.rd.setPower(drive2);
+            bot.ld.setPower(drive*-1);
+            bot.rd.setPower(drive2*-1);
         }
 
 
