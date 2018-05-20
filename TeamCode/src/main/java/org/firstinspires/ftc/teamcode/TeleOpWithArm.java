@@ -25,8 +25,8 @@ public class TeleOpWithArm extends OpMode{
     public void loop() {
 
 
-        double drive2 = gamepad1.right_stick_y / 2*-1;//, turn = gamepad1.right_stick_x;
-        double drive = gamepad1.left_stick_y / 2*-1;
+        double drive2 = gamepad1.right_stick_y / 2;//, turn = gamepad1.right_stick_x;
+        double drive = gamepad1.left_stick_y / 2;
         double straight = gamepad1.right_trigger / 2, back = gamepad1.left_trigger / 2;
 
         // whole arm motor
@@ -94,14 +94,14 @@ public class TeleOpWithArm extends OpMode{
 
         if(straight > 0)
         {
-            bot.ld.setPower(straight);
-            bot.rd.setPower(straight);
+            bot.ld.setPower(straight * -1);
+            bot.rd.setPower(straight * -1);
             telemetry.addData("driving straight: ", "true");
         }
         else if(back > 0)
         {
-            bot.ld.setPower(back * -1);
-            bot.rd.setPower(back * -1);
+            bot.ld.setPower(back);
+            bot.rd.setPower(back);
             telemetry.addData("driving backwards: ", "true");
         }
         else
@@ -115,6 +115,7 @@ public class TeleOpWithArm extends OpMode{
         }
 
 
+        telemetry.update();
 
         //if(gamepad1.y){
             //bot.jewel.setPosition(.8);}
