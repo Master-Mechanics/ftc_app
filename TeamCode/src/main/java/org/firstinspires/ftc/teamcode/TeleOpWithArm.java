@@ -88,8 +88,8 @@ public class TeleOpWithArm extends OpMode{
             //bot.arm2.setPower(leftTrigger / 3 * -1);
         }
         else
-        {
-            //bot.arm2.setPower(rightTrigger / 3);
+            {
+                //bot.arm2.setPower(rightTrigger / 3);
         }
 
         if(straight > 0)
